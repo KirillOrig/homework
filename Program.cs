@@ -5,22 +5,19 @@
 // 7812 => 8 
 // 91 => Третьей цифры нет
 
-Console.WriteLine("Введите число: ");
-int n = Convert.ToInt32(Console.ReadLine());
-int num_len = Convert.ToString(n).Length;
-//Console.WriteLine(num_len);
-int b;
-int a = n / 100;
-if (a < 1){
-    Console.WriteLine("Третьей цифры нет.");
+string s = Console.ReadLine();
+if (s.Length < 3) 
+{
+    Console.WriteLine("No third number.");
+    return;
 }
-else{
-    a = a % 10;
-    Console.WriteLine($"{n} => {a}");
-    b = n / Convert.ToInt32(Math.Pow(10,(num_len - 3)));
-    b = b % 10;
-    Console.WriteLine($"{n} => {b}");
-}
+int i = Convert.ToInt32(s);
+int thirdFirst = i / (int)Math.Pow(10, s.Length - 3);
+thirdFirst = thirdFirst - thirdFirst / 10 * 10;
+int thirdLast = i / 100;
+thirdLast = thirdLast - thirdLast / 10 * 10;
+Console.WriteLine("For number " + i + " first third number is " 
+                + thirdFirst + " last third is " + thirdLast);
 
 
 
