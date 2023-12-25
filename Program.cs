@@ -1,28 +1,28 @@
-﻿// Напишите программу, которая будет принимать на вход два числа и
-// выводить, является ли второе число кратным первому.
-// Если второе число некратно первому, то программа выводит остаток
-// от деления.
-//
-// Примеры
+﻿// Напишите программу, которая выводит третью с конца и начала цифру
+// заданного числа или сообщает, что третьей цифры нет.
 // 
-// 14, 5 => нет, 4
-// 16, 8 => да
-// 4, 3  => нет, 1
+// 456 => 4
+// 7812 => 8 
+// 91 => Третьей цифры нет
 
 using System.Globalization;
 
-int a = Convert.ToInt32(Console.ReadLine());
-int b = Convert.ToInt32(Console.ReadLine());
-int c = a % b;
-if (c == 0)
+Console.WriteLine("Введите число:");
+string num = Console.ReadLine();
+int num_len = num.Length;
+//Console.WriteLine(num_len);
+
+if (num_len < 3)
 {
-    Console.WriteLine("Да");
+    Console.WriteLine("Третьей цифры нет");
 }
 else
 {
-    Console.WriteLine($"Нет, {c}");
+    string num1 = Convert.ToString(num[2]);
+    Console.WriteLine($"Третье число с начала {num1}");
+    string num2 = Convert.ToString(num[num_len-3]);
+    Console.WriteLine($"Третье число с конца {num2}");
 }
-
 
 
 
