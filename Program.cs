@@ -5,23 +5,21 @@
 // 7812 => 8 
 // 91 => Третьей цифры нет
 
-using System.Globalization;
-
-Console.WriteLine("Введите число:");
-string num = Console.ReadLine();
-int num_len = num.Length;
+Console.WriteLine("Введите число: ");
+int n = Convert.ToInt32(Console.ReadLine());
+int num_len = Convert.ToString(n).Length;
 //Console.WriteLine(num_len);
-
-if (num_len < 3)
-{
-    Console.WriteLine("Третьей цифры нет");
+int b;
+int a = n / 100;
+if (a < 1){
+    Console.WriteLine("Третьей цифры нет.");
 }
-else
-{
-    string num1 = Convert.ToString(num[2]);
-    Console.WriteLine($"Третье число с начала {num1}");
-    string num2 = Convert.ToString(num[num_len-3]);
-    Console.WriteLine($"Третье число с конца {num2}");
+else{
+    a = a % 10;
+    Console.WriteLine($"{n} => {a}");
+    b = n / Convert.ToInt32(Math.Pow(10,(num_len - 3)));
+    b = b % 10;
+    Console.WriteLine($"{n} => {b}");
 }
 
 
