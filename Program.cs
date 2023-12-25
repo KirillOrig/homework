@@ -1,21 +1,28 @@
-﻿// Напишите программу, которая принимает на вход трехзначное число
-// и удаляет вторую цифру этого числа.
-// 
+﻿// Напишите программу, которая будет принимать на вход два числа и
+// выводить, является ли второе число кратным первому.
+// Если второе число некратно первому, то программа выводит остаток
+// от деления.
+//
 // Примеры
 // 
-// a = 256 => 26
-// a = 891 => 81
+// 14, 5 => нет, 4
+// 16, 8 => да
+// 4, 3  => нет, 1
 
-int num = new Random().Next(100, 1000);
+using System.Globalization;
 
-string num1 = Convert.ToString(num / 100);
-string num2 = Convert.ToString(num % 10);
+int a = Convert.ToInt32(Console.ReadLine());
+int b = Convert.ToInt32(Console.ReadLine());
+int c = a % b;
+if (c == 0)
+{
+    Console.WriteLine("Да");
+}
+else
+{
+    Console.WriteLine($"Нет, {c}");
+}
 
-Console.WriteLine(num);
-Console.WriteLine(num1 + num2);
-//Console.WriteLine(num1 * 10 + num2);
-
-//Console.WriteLine($"{num} => {num1 + "" + num2}");
 
 
 
