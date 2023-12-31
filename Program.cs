@@ -1,23 +1,20 @@
-﻿// Напишите программу, которая выводит третью с конца и начала цифру
-// заданного числа или сообщает, что третьей цифры нет.
-// 
-// 456 => 4
-// 7812 => 8 
-// 91 => Третьей цифры нет
+﻿using System;
+// Задача 1: Напишите программу, которая принимает на вход число и проверяет, кратно ли оно одновременно
+// 7 и 23.
 
-string s = Console.ReadLine();
-if (s.Length < 3) 
+
+
+Console.Write("Введите число N = ");
+int N = Convert.ToInt32(Console.ReadLine());
+
+if (N % 7 == 0 && N % 23 == 0)
 {
-    Console.WriteLine("No third number.");
-    return;
+    Console.WriteLine($"Число '{N}' одновременно кратно '7' и '23'.");
 }
-int i = Convert.ToInt32(s);
-int thirdFirst = i / (int)Math.Pow(10, s.Length - 3);
-thirdFirst = thirdFirst - thirdFirst / 10 * 10;
-int thirdLast = i / 100;
-thirdLast = thirdLast - thirdLast / 10 * 10;
-Console.WriteLine("For number " + i + " first third number is " 
-                + thirdFirst + " last third is " + thirdLast);
+else
+{
+    Console.WriteLine($"Число '{N}' одновременно не кратно числам '7' и '23'.");
+}
 
 
 
